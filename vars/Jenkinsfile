@@ -33,14 +33,14 @@ pipeline{
         stage('sonarqube Analysis'){
         when { expression { params.action == 'create'}}    
             steps{
-                sonarqubeAnalysis()
+                sonarqube()
             }
         }
-        stage('sonarqube QualitGate'){
+        stage('sonarqube QualityGate'){
         when { expression { params.action == 'create'}}    
             steps{
                 script{
-                    def credentialsId = 'Sonar-token'
+                    def credentialsId = 'Sonartoken'
                     qualityGate(credentialsId)
                 }
             }
