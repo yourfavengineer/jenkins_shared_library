@@ -13,7 +13,7 @@ pipeline{
         string(name: 'IMAGE_NAME', defaultValue: 'youtube', description: 'Docker Image Name')
     }
     tools{
-        jdk 'jdk17'
+        jdk 'jdk11'
         nodejs 'node16'
     }
     environment {
@@ -41,7 +41,7 @@ pipeline{
             steps{
                 script{
                     def credentialsId = 'Sonartoken'
-                    qualityGate(credentialsId)
+                    qualitygate(credentialsId)
                 }
             }
         }
