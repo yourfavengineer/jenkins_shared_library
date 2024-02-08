@@ -74,22 +74,22 @@ pipeline{
                 }
             }
         }
-        #stage('Trivy iamge'){
+        #stage('Trivy image'){
         when { expression { params.action == 'create'}}    
             steps{
-                trivyImage()
+                trivyimage()
             }
         }
         #stage('Run container'){
         when { expression { params.action == 'create'}}    
             steps{
-                runContainer()
+                runcontainer()
             }
         }
        #stage('Remove container'){
         when { expression { params.action == 'delete'}}    
             steps{
-                removeContainer()
+                deletecontainer()
             }
         }
         #stage('Kube deploy'){
