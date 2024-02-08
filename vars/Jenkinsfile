@@ -70,7 +70,7 @@ pipeline{
                    def dockerHubUsername = params.DOCKER_HUB_USERNAME
                    def imageName = params.IMAGE_NAME
                    
-                   dockerBuild(dockerHubUsername, imageName)
+                   dockerbuild(dockerHubUsername, imageName)
                 }
             }
         }
